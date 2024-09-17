@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'app.jadwal.sholat'
-include('app', 'list', 'utilities')
+include('lib')
