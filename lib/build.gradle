@@ -8,6 +8,7 @@
 
 plugins {
     id 'java-library'
+    id 'maven-publish'
 }
 
 group 'app.jadwal.sholat'
@@ -21,4 +22,18 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     api 'org.apache.commons:commons-math3:3.6.1'
     implementation 'com.google.guava:guava:31.1-jre'
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            groupId = 'app.jadwal.sholat'
+            artifactId = 'JadwalSholat'
+            version = '1.0.0'
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
 }
